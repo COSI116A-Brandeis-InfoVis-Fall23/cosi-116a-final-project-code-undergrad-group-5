@@ -1,1 +1,12 @@
-[{"Month": "May", "Ridership": 3483042}, {"Month": "June", "Ridership": 1152060}, {"Month": "July", "Ridership":1152608}, {"Month": "August", "Ridership": 1145314}, {"Month": "September", "Ridership": 1206808}, {"Month": "October", "Ridership":1234913}, {"Month": "November", "Ridership":1166113}, {"Month": "December", "Ridership": 2674844}]
+[{"Month": "January ", "Ridership": 6886902}, 
+{"Month": "February", "Ridership": 8178882}, 
+{"Month": "March", "Ridership":9111797}, 
+{"Month": "April", "Ridership": 9977442},
+{"Month": "May", "Ridership": 8288251}, 
+{"Month": "June", "Ridership":10164419}, 
+{"Month": "July", "Ridership":9799307}, 
+{"Month": "August", "Ridership": 8936003},
+{"Month": "September", "Ridership": 8849256}, 
+{"Month": "October", "Ridership":10419344}, 
+{"Month": "November", "Ridership":9885933}, 
+{"Month": "December", "Ridership": 8591073}]
