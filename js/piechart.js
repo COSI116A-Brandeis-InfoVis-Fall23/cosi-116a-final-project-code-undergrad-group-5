@@ -1,6 +1,4 @@
 
-
-
 // Load CSV data
 d3.csv("data/Cosi116aDataCleaning/ridership_by_line.csv", function (error, data) {
   // Assuming the CSV has columns like 'service_date', 'route_or_line', 'average_monthly_ridership'
@@ -10,8 +8,6 @@ d3.csv("data/Cosi116aDataCleaning/ridership_by_line.csv", function (error, data)
     entry.month = entry.service_date.substring(0, 7);
   });
 });
-
-
 
 // Function to generate a pie chart
 function generatePieChart(monthData) {
@@ -59,16 +55,4 @@ function generatePieChart(monthData) {
     .style("font-size", "18px")
     .style("font-weight", "bold")
     .text("MBTA Ridership Breakdown By Line"); // Specify your title text
-
- 
-
-    
-
-
-
-  
-  
-  
-
-
 }
