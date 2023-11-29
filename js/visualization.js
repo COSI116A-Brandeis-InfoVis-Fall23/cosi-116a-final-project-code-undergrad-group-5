@@ -4,6 +4,17 @@
       
       const dispatchString = "selectionUpdated";
 
+
+      let bargraphData = bargraph()
+      .x(d => d.Month)
+      .xLabel("Month")
+      .y(d => d.Ridership)
+      .yLabel("Ridership")
+      .selectionDispatcher(d3.dispatch(dispatchString))
+      ("#bargraph", data);
+  
+  
+
       let tableData = table()
         .selectionDispatcher(d3.dispatch(dispatchString))
         ("#table", data);
