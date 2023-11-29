@@ -21,38 +21,7 @@ h1, h2, h3 {
   height: 100%;
 }
 
-/* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */  
-#forkongithub a{
-	background:#00F;
-	color:#fff;
-	text-decoration:none;
-	font-family:arial,sans-serif;
-	text-align:center;
-	font-weight:bold;
-	padding:5px 40px;
-	font-size:1rem;
-	line-height:1.4rem;
-	position:relative;
-	transition:0.5s;
-}
-#forkongithub a:hover{
-	background:#118;
-	color:#fff;
-}
-#forkongithub a::before,#forkongithub a::after{
-	content:"";
-	width:100%;
-	display:block;
-	position:absolute;
-	top:1px;
-	left:0;
-	height:1px;
-	background:#fff;
-}
-#forkongithub a::after{
-	bottom:1px;
-	top:auto;
-}
+
 @media screen and (min-width:1000px){
 	#forkongithub{
 		position:fixed;
@@ -122,3 +91,33 @@ background-color: #e08fa3;
 .bar {
 	fill: steelblue;
 }
+
+
+
+/* Apply styles to the pie chart container */
+#piechartContainer {
+	/* Add any container styles you need */
+	margin: 0px;
+  }
+  
+  /* Apply styles to the SVG element */
+  #piechartContainer svg {
+	/* Center the SVG horizontally and vertically */
+	display: block;
+	margin: auto;
+	
+  }
+  
+  /* Apply styles to the individual slices of the pie chart */
+  #piechartContainer path {
+	/* Add any styles you want for the pie chart slices */
+	stroke: black; /* Border color of each slice */
+	stroke-width: 2.5px; /* Border width of each slice */
+  }
+
+  #piechartContainer text.pie-label {
+	font-family: 'Times New Roman', serif; /* Specify Times New Roman as the font family */
+	font-size: 12px; /* Specify your preferred font size */
+	fill: #ffffff; /* Specify the text color */
+  }
+  
