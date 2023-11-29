@@ -48,7 +48,7 @@ h1, h2, h3 {
 }
 /* Style for selected marks (table rows) */
 tr.selected {
-	background-color: pink;
+	background-color: rgb(120, 170, 231);
   }
   
 /* Pretty table layout */
@@ -85,7 +85,7 @@ background-color: #d6d6d6;
 
 /* ...but add a darker selected and brushed color. */
 tr.mouseover.selected{
-background-color: #e08fa3;
+background-color: #2499e7;
 }
 
 .bar {
