@@ -70,51 +70,23 @@ function bargraph(){
         .attr("y", d => yScale(yValue(d)))
         .attr("width", xScale.bandwidth())
         .attr("height", d => height - yScale(yValue(d)))
-        .attr("fill", "steelblue");
+        .attr("fill", "steelblue")
+        .on("click", function (event, d) {
+          // Deselect all bars
+          svg.selectAll(".bar").classed("selected", false);
+
+          // Toggle the "selected" class for the clicked bar
+          d3.select(this).classed("selected", true);
+
+          // Dispatch the selected data to linked visualizations
+          let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
+          
+          // Let other charts know
+          dispatcher.call(dispatchString, this, svg.selectAll(".selected").data());
+      });
         
         
         selectableElements = bars;
-    
-        svg.call(brush);
-
-        function brush(g) {
-            const brush = d3.brush()
-              .on("start brush", highlight)
-              .on("end", brushEnd)
-              .extent([
-                [-margin.left, -margin.bottom],
-                [width + margin.right, height + margin.top]
-              ]);
-      
-            ourBrush = brush;
-      
-            g.call(brush); // Adds the brush to this element
-      
-            // Highlight the selected circles.
-            function highlight() {
-              if (d3.event.selection === null) return;
-              const [
-                [x0, y0],
-                [x1, y1]
-              ] = d3.event.selection;
-              bars.classed("selected", d =>
-                x0 <= X(d) && X(d) <= x1 && y0 <= Y(d) && Y(d) <= y1
-              );
-      
-              // Get the name of our dispatcher's event
-              let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
-      
-              // Let other charts know
-              dispatcher.call(dispatchString, this, svg.selectAll(".selected").data());
-            }
-            
-            function brushEnd() {
-              // We don't want an infinite recursion
-              if (d3.event.sourceEvent.type != "end") {
-                d3.select(this).call(brush.move, null);
-              }
-            }
-          }
     return chart;
   }
   function X(d) {

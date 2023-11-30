@@ -88,8 +88,12 @@ tr.mouseover.selected{
 background-color: #2499e7;
 }
 
-.bar {
+bar {
 	fill: steelblue;
+}
+
+rect.selected {
+	fill: red;
 }
 
 
