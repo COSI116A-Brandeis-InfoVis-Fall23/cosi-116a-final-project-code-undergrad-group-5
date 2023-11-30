@@ -15,7 +15,6 @@
       let tableData = table()
         .selectionDispatcher(d3.dispatch(dispatchString))
         ("#table", data);
-      
 
       // Function to convert word format month to numeric format
       function convertToNumericMonth(wordMonth) {
