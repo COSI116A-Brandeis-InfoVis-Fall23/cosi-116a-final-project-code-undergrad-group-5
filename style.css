@@ -20,6 +20,26 @@ h1, h2, h3 {
   width: 100%;
   height: 100%;
 }
+/* The line chart will take the left half of the screen */
+.linechart-holder {
+	flex: 0 0 50%;
+  }
+/* Default style for marks and channels used */
+.point {
+	fill: white;
+	stroke: #69b3a2;
+	stroke-width: 3;
+  }
+  
+.linePath {
+fill: none;
+stroke: black;
+stroke-width: 1.5;
+}
+
+.axisLabel {
+fill: #475d7c;
+}
 
 
 @media screen and (min-width:1000px){
