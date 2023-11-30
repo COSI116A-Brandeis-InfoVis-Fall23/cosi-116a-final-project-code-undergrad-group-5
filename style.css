@@ -20,6 +20,26 @@ h1, h2, h3 {
   width: 100%;
   height: 100%;
 }
+/* The line chart will take the left half of the screen */
+.linechart-holder {
+	flex: 0 0 50%;
+  }
+/* Default style for marks and channels used */
+.point {
+	fill: white;
+	stroke: #69b3a2;
+	stroke-width: 3;
+  }
+  
+.linePath {
+fill: none;
+stroke: black;
+stroke-width: 1.5;
+}
+
+.axisLabel {
+fill: #475d7c;
+}
 
 
 @media screen and (min-width:1000px){
@@ -88,13 +108,18 @@ tr.mouseover.selected{
 background-color: #2499e7;
 }
 
-.bar {
+bar {
 	fill: steelblue;
 }
 
 /*.waterfill{
 	fill: steelblue;
 }*/
+
+rect.selected {
+	fill: red;
+}
+
 
 
 /* Apply styles to the pie chart container */
@@ -122,5 +147,12 @@ background-color: #2499e7;
 	font-family: 'Times New Roman', serif; /* Specify Times New Roman as the font family */
 	font-size: 12px; /* Specify your preferred font size */
 	fill: #ffffff; /* Specify the text color */
+  }
+   body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
   }
   

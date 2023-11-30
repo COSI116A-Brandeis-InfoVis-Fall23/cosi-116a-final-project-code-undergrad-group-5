@@ -4,16 +4,13 @@
       
       const dispatchString = "selectionUpdated";
 
-
-      let bargraphData = bargraph()
-      .x(d => d.Month)
-      .xLabel("Month")
-      .y(d => d.Ridership)
-      .yLabel("Ridership")
-      .selectionDispatcher(d3.dispatch(dispatchString))
-      ("#bargraph", data);
-  
-  
+      let barGraphData = bargraph()
+        .x(d => d.Month)
+        .xLabel("Month")
+        .y(d => d.Ridership)
+        .yLabel("Ridership")
+        .selectionDispatcher(d3.dispatch(dispatchString))
+        ("#bargraph", data)
 
       let tableData = table()
         .selectionDispatcher(d3.dispatch(dispatchString))
@@ -73,6 +70,14 @@
           console.log("Selected Month:", selectedMonth);
           handleRowClick(selectedMonth);
         }
+      });
+
+      tableData.selectionDispatcher().on(dispatchString, function(selectedData) {
+        barGraphData.updateSelection(selectedData);
+      });
+
+      barGraphData.selectionDispatcher().on(dispatchString, function(selectedData) {
+        tableData.updateSelection(selectedData);
       });
   });
 })})();

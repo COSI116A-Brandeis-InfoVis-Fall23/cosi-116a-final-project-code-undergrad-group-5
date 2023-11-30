@@ -4,7 +4,8 @@ function generateWaterLevelVis(waterLevel) {
     console.log("water level data is: ", waterLevel)
   
       // Generate waterLevel chart
-      const rect = d3.rect
+      const outerRect = d3.rect
+      const innerRect = d3.rect
   
       //Modify the sizings and spatial location of water level graphic
       const svg = d3.select("#waterLevelContainer").append("svg")
@@ -17,7 +18,7 @@ function generateWaterLevelVis(waterLevel) {
       svg.selectAll("path")
       .data(rect(waterLevel.map(d => d.Month)))
       .enter().append("path")
-      .attr("d", rect)
+      .attr("d", innerRect)
       .attr("fill", (d, i) => waterfill);
   
       // Add a label with the water level
