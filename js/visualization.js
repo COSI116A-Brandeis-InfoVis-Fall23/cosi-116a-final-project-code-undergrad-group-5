@@ -14,7 +14,7 @@
         .y(d => d.Ridership)
         .yLabel("Ridership")
         .selectionDispatcher(d3.dispatch(dispatchString))
-        ("#bargraph", data)
+        ("#bargraph", data);
 
       
       let lineChartData = linechart()
