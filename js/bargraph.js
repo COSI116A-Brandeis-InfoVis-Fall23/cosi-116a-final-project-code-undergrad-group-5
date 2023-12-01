@@ -31,7 +31,6 @@ function bargraph(){
         .rangeRound([0, width])
         .paddingInner(0.1);
 
-
         yScale
         .domain([
         d3.min(data, d => yValue(d)),
