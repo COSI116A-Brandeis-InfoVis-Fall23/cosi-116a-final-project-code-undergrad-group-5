@@ -4,6 +4,10 @@
       
       const dispatchString = "selectionUpdated";
 
+      let tableData = table()
+      .selectionDispatcher(d3.dispatch(dispatchString))
+      ("#table", data);
+
       let barGraphData = bargraph()
         .x(d => d.Month)
         .xLabel("Month")
@@ -12,9 +16,14 @@
         .selectionDispatcher(d3.dispatch(dispatchString))
         ("#bargraph", data)
 
-      let tableData = table()
+      
+      let lineChartData = linechart()
+        .x(d => d.Month)
+        .xLabel("Month")
+        .y(d => d["Total Precipitation (Inches)"])
+        .yLabel("Total Precipitation (Inches)")
         .selectionDispatcher(d3.dispatch(dispatchString))
-        ("#table", data);
+        ("#linechart", data);
 
       // Function to convert word format month to numeric format
       function convertToNumericMonth(wordMonth) {
@@ -74,9 +83,14 @@
 
       tableData.selectionDispatcher().on(dispatchString, function(selectedData) {
         barGraphData.updateSelection(selectedData);
+        lineChartData.updateSelection(selectedData);
       });
 
       barGraphData.selectionDispatcher().on(dispatchString, function(selectedData) {
+        tableData.updateSelection(selectedData);
+        lineChartData.updateSelection(selectedData);
+      });
+      lineChartData.selectionDispatcher().on(dispatchString, function(selectedData) {
         tableData.updateSelection(selectedData);
       });
   });
