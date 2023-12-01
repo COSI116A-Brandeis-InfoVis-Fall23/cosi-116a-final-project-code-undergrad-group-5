@@ -1,9 +1,6 @@
 (() => {
   d3.json("data/Cosi116aDataCleaning/avgMonthlyRidership.json", (data) => {
     d3.csv("data/Cosi116aDataCleaning/ridership_by_line.csv", (csvdata) => {
-      console.log(data[3])
-      const result = data.filter((row) => row.Month == "March")
-      console.log(result)
       const dispatchString = "selectionUpdated";
 
       let tableData = table()
