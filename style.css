@@ -112,6 +112,10 @@ bar {
 	fill: steelblue;
 }
 
+/*.waterfill{
+	fill: steelblue;
+}*/
+
 rect.selected {
 	fill: red;
 }
