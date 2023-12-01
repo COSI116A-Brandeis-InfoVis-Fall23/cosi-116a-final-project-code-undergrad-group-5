@@ -27,8 +27,8 @@ h1, h2, h3 {
 /* Default style for marks and channels used */
 .point {
 	fill: white;
-	stroke: #69b3a2;
-	stroke-width: 3;
+	stroke: #5d80a8;
+	stroke-width: 4;
   }
   
 .linePath {
@@ -40,6 +40,12 @@ stroke-width: 5;
 .axisLabel {
 fill: #475d7c;
 }
+/* Style for selected marks (circles) */
+circle.selected {
+	fill: pink;
+	stroke: red;
+	opacity: 5;
+  }
 
 
 @media screen and (min-width:1000px){
