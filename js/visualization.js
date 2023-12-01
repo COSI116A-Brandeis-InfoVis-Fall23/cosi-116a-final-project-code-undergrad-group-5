@@ -105,6 +105,7 @@
       });
       lineChartData.selectionDispatcher().on(dispatchString, function(selectedData) {
         tableData.updateSelection(selectedData);
+        barGraphData.updateSelection(selectedData);
       });
   });
 })})();
