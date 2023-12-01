@@ -112,9 +112,6 @@ bar {
 	fill: steelblue;
 }
 
-/*.waterfill{
-	fill: steelblue;
-}*/
 
 rect.selected {
 	fill: red;
@@ -147,6 +144,40 @@ rect.selected {
 	font-family: 'Times New Roman', serif; /* Specify Times New Roman as the font family */
 	font-size: 12px; /* Specify your preferred font size */
 	fill: #ffffff; /* Specify the text color */
+  }
+   body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+  }
+
+  /* Apply styles to the water level  container */
+#waterLevel {
+	/* Add any container styles you need */
+	margin: 0px;
+  }
+  
+  /* Apply styles to the SVG element */
+  #waterLevelContainer svg {
+	/* Center the SVG horizontally and vertically */
+	display: block;
+	margin: auto;
+	
+  }
+  
+  /* Apply styles to the inner rectangle */
+  #waterLevelContainer path {
+	/* Add any styles you want for the water level vis*/
+	stroke: black; /* Border color of each slice */
+	stroke-width: 2.5px; /* Border width of each slice */
+  }
+
+  #waterLevelContainer text.water-label {
+	font-family: 'Times New Roman', serif; /* Specify Times New Roman as the font family */
+	font-size: 12px; /* Specify your preferred font size */
+	fill: 'black'; /* Specify the text color */
   }
    body {
 	display: flex;

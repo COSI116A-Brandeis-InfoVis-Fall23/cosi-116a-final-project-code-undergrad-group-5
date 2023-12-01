@@ -1,7 +1,9 @@
 (() => {
   d3.json("data/Cosi116aDataCleaning/avgMonthlyRidership.json", (data) => {
     d3.csv("data/Cosi116aDataCleaning/ridership_by_line.csv", (csvdata) => {
-      
+      console.log(data[3])
+      const result = data.filter((row) => row.Month == "March")
+      console.log(result)
       const dispatchString = "selectionUpdated";
 
       let barGraphData = bargraph()
@@ -61,7 +63,18 @@
         } else {
           console.log(`Invalid month format: ${wordMonth}`);
         }
-      }
+        const wordMonthData = data.filter((row) => row.Month == wordMonth)
+        const monthPrecip= wordMonthData[0]['Total Precipitation (Inches)']
+        if (monthPrecip != "None"){
+          d3.select("#waterLevelContainer").html("");
+            // Generate and display water level vis for each entry
+            console.log("Monthly Precipitation is:", monthPrecip); 
+            generateWaterLevelVis(monthPrecip)
+
+          } else {
+            console.log(`No data available for ${wordMonth}`);
+          }
+        }
       
       // Attach click event listener to the table rows
       document.getElementById("table").addEventListener("click", function (event) {

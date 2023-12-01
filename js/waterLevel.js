@@ -4,29 +4,41 @@ function generateWaterLevelVis(waterLevel) {
     console.log("water level data is: ", waterLevel)
   
       // Generate waterLevel chart
-      const outerRect = d3.rect
-      const innerRect = d3.rect
+      //const outerRect = d3.path.rect();
+      //const innerRect = d3.path.rect();
+
+      var innerRect= d3.path(); 
+           
+         // Creating rectangle at x:50 and y:100 
+         // and height:200, width:300 
+         innerRect.rect(0,0,300,waterLevel);  
+         d3.select("#waterLevelContainer").attr("d",innerRect)
+         .attr("fill", (d, i) => 'blue');
+
+
+         
   
-      //Modify the sizings and spatial location of water level graphic
+      //Modify the sizings and spatial location of water level container
       const svg = d3.select("#waterLevelContainer").append("svg")
       .attr("width", 500)
       .attr("height", 1000)
-      //.append("g")
-      .attr("transform", "translate(200,200)");
+      .append("g")
+      .attr("transform", "translate(0,0)");
   
       // the rectangle is filled based on the water level for the selected month
       svg.selectAll("path")
-      .data(rect(waterLevel.map(d => d.Month)))
+      .data(innerRect)
       .enter().append("path")
       .attr("d", innerRect)
-      .attr("fill", (d, i) => waterfill);
+      .attr("fill", (d, i) => 'blue');
   
       // Add a label with the water level
       svg.selectAll("text")
-      .data(rect(waterLevel.map(d => d.Month)))
+      .data(innerRect)
       .enter().append("text")
+      .attr("class", "water-label") // Add a class for styling
       .attr("text-anchor", "middle")
-      .text((d, i) => data[2]);
+      .text((d, i) => waterLevel);
   
       //Add title
       svg.append("text")
