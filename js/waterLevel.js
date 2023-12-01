@@ -33,6 +33,3 @@ function generateWaterLevelVis(waterLevel) {
       .style("font-weight", "bold")
       .text("Monthly Water Level");
 }
-
-// Example usage
-generateW
