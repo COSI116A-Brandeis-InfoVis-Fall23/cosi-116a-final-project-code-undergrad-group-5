@@ -7,8 +7,8 @@ function bargraph(){
       },
       width = 500 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom,
-      xValue = d => d[0],
-      yValue = d => d[0],
+      xValue = d => d.Month,
+      yValue = d => d.Ridership,
       xLabelText = "",
       yLabelText = "",
       yLabelOffsetPx = 0,
@@ -31,12 +31,8 @@ function bargraph(){
         .rangeRound([0, width])
         .paddingInner(0.1);
 
-        yScale
-        .domain([
-        d3.min(data, d => yValue(d)),
-        d3.max(data, d => yValue(d))
-        ])
-        .rangeRound([height, 0]);
+        yScale.domain([0, d3.max(data, d => yValue(d))])
+  .rangeRound([height, 0]);
 
 
         let xAxis = svg.append("g")
