@@ -185,11 +185,3 @@ rect.selected {
 	font-size: 20px; /* Specify your preferred font size */
 	fill: 'black'; /* Specify the text color */
   }
-   body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	margin: 0;
-  }
-  
