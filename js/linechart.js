@@ -44,7 +44,8 @@ function linechart() {
   
       let xAxis = svg.append("g")
         .attr("transform", "translate(0," + (height) + ")")
-        .call(d3.axisBottom(xScale));
+        .call(d3.axisBottom(xScale))
+        .selectAll("text")
   
       xAxis.append("text")
         .attr("class", "axisLabel")
@@ -52,12 +53,16 @@ function linechart() {
         .text(xLabelText);
   
       let yAxis = svg.append("g")
-        .call(d3.axisLeft(yScale));
+        .call(d3.axisLeft(yScale))
+        .selectAll("text")
   
       yAxis.append("text")
         .attr("class", "axisLabel")
         .attr("transform", "translate(" + yLabelOffsetPx + ", -12)")
         .text(yLabelText);
+
+      svg.selectAll(".tick text")
+      .style("font-size", "7px");
   
       let line = d3.line()
         .x(d => xScale(xValue(d)))
@@ -85,7 +90,7 @@ function linechart() {
       selectableElements = points;
   
       svg.call(brush);
-  
+      // brushing functionality
       function brush(g) {
         const brush = d3.brush()
           .on("start brush", highlight)
@@ -179,13 +184,13 @@ function linechart() {
       yLabelOffsetPx = _;
       return chart;
     };
-  
+    // Gets or sets the dispatcher we use for selection events
     chart.selectionDispatcher = function (_) {
       if (!arguments.length) return dispatcher;
       dispatcher = _;
       return chart;
     };
-  
+    //  Selected an element if the data is selected
     chart.updateSelection = function (selectedData) {
       selectableElements.classed("selected", d => selectedData.includes(d));
     };
