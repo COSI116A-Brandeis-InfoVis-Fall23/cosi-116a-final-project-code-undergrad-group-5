@@ -7,10 +7,18 @@ function generateWaterLevelVis(waterLevel) {
   const svg = d3.select("#waterLevelContainer")
       .append("svg")
       .attr("width", 400)
-      .attr("height", 400)
+      .attr("height", 450)
       .append("g")
-      .attr("transform", "translate(100,0)")
+      .attr("transform", "translate(0,0)")
       .attr("fill", 'black')
+
+      svg.append("image")
+      //console.log("showing rat")
+      .attr('xlink:href','images/StandingRat.jpeg')
+      //.attr("href", 'images/StandingRat.jpeg')
+      // .attr("src", function(d) {
+      //     return "images/StandingRat.jpeg" + d.data[2]
+       .attr("transform", "translate(100, 0)");
 
       // Append an outer rectangle to fill based on water level
     svg.append("rect")
@@ -40,12 +48,21 @@ function generateWaterLevelVis(waterLevel) {
 
   // Add title for the visualization
   svg.append("text")
-      .attr("x", 50)
-      .attr("y", 20)
+      .attr("x", 160)
+      .attr("y", 380)
       .attr("text-anchor", "middle")
       .style("font-size", "18px")
       .style("font-weight", "bold")
       .style("font-color", "black")
-      .text("Monthly Water Level");
+      .text("Monthly Total Precipitation (inches)");
+
+  svg.append("text")
+      .attr("x", 47)
+      .attr("y", 400)
+      //.attr("text-anchor", "middle")
+      .style("font-size", "12px")
+      //.style("font-weight", "bold")
+      .style("font-color", "black")
+      .text("(average Boston rat of 7 in. for reference)");
 }
 }
