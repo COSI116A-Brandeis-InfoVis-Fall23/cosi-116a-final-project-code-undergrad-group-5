@@ -1,7 +1,8 @@
 function generateWaterLevelVis(waterLevel) {
   // Check if water level is an object and is defined
   console.log("water level data is: ", waterLevel);
-
+  // checking for None, so that it won't create the visualization when the precipitation is None
+  if (waterLevel != "None"){
   // Select the container and append an SVG
   const svg = d3.select("#waterLevelContainer")
       .append("svg")
@@ -11,7 +12,7 @@ function generateWaterLevelVis(waterLevel) {
       .attr("transform", "translate(100,0)")
       .attr("fill", 'black')
 
-      // Append a rectangle representing the water level
+      // Append an outer rectangle to fill based on water level
     svg.append("rect")
     .attr("width", 100)
     .attr("height", 300)
@@ -19,7 +20,7 @@ function generateWaterLevelVis(waterLevel) {
     .attr("transform", "translate(0,50)")
     .attr("fill-opacity", '.2');
 
-    // Append a rectangle representing the water level
+    // Append an inner rectangle representing the water level
    translate_water_level = 300 - (waterLevel * 50) + 50
     svg.append("rect")
     .attr("width", 100)
@@ -37,7 +38,7 @@ function generateWaterLevelVis(waterLevel) {
       .attr("x", 50) // Adjust the x-coordinate for label position
       .attr("y", waterLevel + 30 + 50); // Adjust the y-coordinate for label position
 
-  // Add title
+  // Add title for the visualization
   svg.append("text")
       .attr("x", 50)
       .attr("y", 20)
@@ -46,4 +47,5 @@ function generateWaterLevelVis(waterLevel) {
       .style("font-weight", "bold")
       .style("font-color", "black")
       .text("Monthly Water Level");
+}
 }

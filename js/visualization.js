@@ -71,16 +71,12 @@
         }
         const wordMonthData = data.filter((row) => row.Month == wordMonth)
         const monthPrecip= wordMonthData[0]['Total Precipitation (Inches)']
-        if (monthPrecip != "None"){
           d3.select("#waterLevelContainer").html("");
             // Generate and display water level vis for each entry
             console.log("Monthly Precipitation is:", monthPrecip); 
             generateWaterLevelVis(monthPrecip)
-
-          } else {
-            console.log(`No data available for ${wordMonth}`);
-          }
         }
+
       
       // Attach click event listener to the table rows
       document.getElementById("table").addEventListener("click", function (event) {
