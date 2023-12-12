@@ -178,7 +178,15 @@
 
         <h1>Design Process</h1>
 
-        <p><em>Sketches and design choices to justify final visualization.</em></p>
+
+        <p><em>We decided on the key variables to investigate from our datasets: ridership by month, ridership by line, and precipitation levels. We started with a couple of sketches, using visualization channels like bar charts, node graphs, tree maps, line graphs, and pie charts to visualize our weather MBTA route maps. 
+          After discussing the strengths and weaknesses of each, we were able to choose the most approachable and creative way to combine our individual sketches into one comprehensive sketch in which our charts and graphs would effectively interact with each other and vividly present the dataset.
+          First, we cleaned and filtered our datasets and organized them into csv and json files. Then, we implemented our first visualizations: the table, bar chart, and the general code for visualization.js and linking based on our previous experiences.
+          Next, we added the pie chart showing the monthly ridership breakdown by line, followed by a line chart of monthly total precipitation. 
+          The code for the piechart was helpful in our next implementation of the water level visualizer, as both needed to listen to a mouse click event. A New York rat was added next to it as a reference for precipitation. 
+          The final step was linking the 5 visualizations together to achieve the interactive functionality. Regarding linking, the table is our starting basis. A mouse action on a table row will cause the other charts to reflect more specific information from that row. We chose to make it this way because a table is simple, self-explanatory, and holds all the necessary information together in a clean easy-to-read way.
+          We then added colors and design attributes to our css file and cleaned up our formatting and text.
+          </em></p>
         <img src="images/sketch1.png" alt="sketch 1" width="300" height="350" />
         <img src="images/sketch2.png" alt="sketch 2" width="300" height="350" />
         <img src="images/sketch3.png" alt="sketch 3" width="500" height="300" />
