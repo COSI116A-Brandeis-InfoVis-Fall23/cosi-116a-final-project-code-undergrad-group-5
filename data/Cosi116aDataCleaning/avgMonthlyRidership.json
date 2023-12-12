@@ -9,4 +9,4 @@
 {"Month": "September", "Ridership": 8849256, "Total Precipitation (Inches)": 4.22}, 
 {"Month": "October", "Ridership":10419344, "Total Precipitation (Inches)": 4.41}, 
 {"Month": "November", "Ridership":9885933, "Total Precipitation (Inches)": 2.26}, 
-{"Month": "December", "Ridership": 8591073, "Total Precipitation (Inches)": "None"}]
+{"Month": "December", "Ridership": 8591073, "Total Precipitation (Inches)": 0}]
