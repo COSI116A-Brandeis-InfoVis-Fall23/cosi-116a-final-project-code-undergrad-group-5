@@ -95,10 +95,14 @@
       barGraphData.selectionDispatcher().on(dispatchString, function(selectedData) {
         tableData.updateSelection(selectedData);
         lineChartData.updateSelection(selectedData);
+        handleRowClick(selectedData[0].Month)
+
       });
       lineChartData.selectionDispatcher().on(dispatchString, function(selectedData) {
         tableData.updateSelection(selectedData);
         barGraphData.updateSelection(selectedData);
+        handleRowClick(selectedData[0].Month)
+
       });
   });
 })})();
