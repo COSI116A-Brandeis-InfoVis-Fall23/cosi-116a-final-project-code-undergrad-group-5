@@ -17,8 +17,8 @@ h1, h2, h3 {
 
 /* But your visualization should be full-width and full-height */
 .vis-holder {
-  width: 100%;
-  height: 100%;
+  width: 10%;
+  height: 10%;
 }
 /* The line chart will take the left half of the screen */
 .linechart-holder {
