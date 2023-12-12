@@ -9,7 +9,7 @@ function linechart() {
         bottom: 90
       },
       width = 500 - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom,
+      height = 350 - margin.top - margin.bottom,
       xValue = d => d.Month,
       yValue = d => d['Total Precipitation (Inches)'],
       xLabelText = "Month",
