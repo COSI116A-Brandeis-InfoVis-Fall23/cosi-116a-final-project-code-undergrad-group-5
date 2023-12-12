@@ -57,10 +57,10 @@ function generateWaterLevelVis(waterLevel) {
       .text("Monthly Total Precipitation (inches)");
 
   svg.append("text")
-      .attr("x", 47)
+      .attr("x", 28)
       .attr("y", 400)
       //.attr("text-anchor", "middle")
-      .style("font-size", "12px")
+      .style("font-size", "14px")
       //.style("font-weight", "bold")
       .style("font-color", "black")
       .text("(average Boston rat of 7 in. for reference)");
